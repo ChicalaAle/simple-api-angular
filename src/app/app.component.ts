@@ -38,11 +38,9 @@ export class AppComponent implements OnInit{
       response => {
         // this.posts = response.data;  FOR REQRES.IN
         this.posts = response;   
-        console.log(this.posts)
         this.loading = false;
       }, error => {
         this.error = true;
-        console.log(error)
         this.loading = false;
       }
       
