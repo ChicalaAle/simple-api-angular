@@ -3,7 +3,9 @@
 <div class="container mt-4">
 
   
-  <h1 *ngIf="!error" class="mb-5">Información extraida de: <span class="small text-warning">{{url}}</span></h1>
+  <h2 *ngIf="loading" class="alert alert-info text-center">Cargando...</h2>
+
+  <h1 *ngIf="!error && !loading" class="mb-5">Información extraida de: <span class="small text-warning">{{url}}</span></h1>
 
   <div *ngIf="error" class="alert alert-danger text-center">NO SE PUDO EXTRAER LA INFORMACIÓN DEL SITIO</div>
 

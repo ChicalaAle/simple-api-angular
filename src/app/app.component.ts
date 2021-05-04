@@ -15,6 +15,8 @@ export class AppComponent implements OnInit{
   public posts: Array<any>;
   public url: String;
 
+  public loading: boolean;
+
   public error: boolean;
 
   constructor(
@@ -26,20 +28,26 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(){
+    this.loading = true;
     this.getPosts();
   }
 
   getPosts(){
+    
     this._postService.getPosts().subscribe( 
       response => {
         // this.posts = response.data;  FOR REQRES.IN
         this.posts = response;   
         console.log(this.posts)
+        this.loading = false;
       }, error => {
         this.error = true;
         console.log(error)
+        this.loading = false;
       }
+      
      )
+     
   }
 
 }
