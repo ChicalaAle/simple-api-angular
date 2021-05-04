@@ -32,7 +32,9 @@ export class AppComponent implements OnInit{
   getPosts(){
     this._postService.getPosts().subscribe( 
       response => {
-        this.posts = response;     
+        // this.posts = response.data;  FOR REQRES.IN
+        this.posts = response;   
+        console.log(this.posts)
       }, error => {
         this.error = true;
         console.log(error)
