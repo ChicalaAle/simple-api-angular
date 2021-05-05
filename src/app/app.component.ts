@@ -10,7 +10,7 @@ import { PostService } from './services/post.service';
   providers: [PostService]
 })
 export class AppComponent implements OnInit{
-  title = 'foro-angular';
+  title = 'Angular HTTP Requests';
 
   public posts: Array<any>;
   public url: String;
